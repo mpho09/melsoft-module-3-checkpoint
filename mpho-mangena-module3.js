@@ -132,10 +132,10 @@ Object.is(+0, -0)
 [1,2,3] == "1,2,3"
 
 //it will print true becouse array is empty and it the same as false
-[] == false
+console.log([] == false);
 
 //it will print true becouse array is empty and  0 is the same as empty
-[] == 0
+console.log([] == 0);
 
 //it will print true
 [0] == false
@@ -470,14 +470,24 @@ null or undefined without treating other falsy values to be like null or undefin
 
 typeof null returns 'object'. Explain WHY (the historical reason) and then describe how you
 would check if a variable is specifically null without being tricked.
-
+When JavaScript was first created values were represented internally using type tags. 
+The value null was represented with a tag that was interpreted as an object. 
+This behavior became part of the language and could not be changed later because it
+would break existing JavaScript programs.
 
 In your banking calculator for Challenge 7, you had to handle floating-point arithmetic for
 money. Explain in your own words why 0.1 + 0.2 does NOT equal 0.3 in JavaScript, and
 what the production-grade solution would be (think about how real banks store money
 internally).
+Some decimal values, such as 0.1 and 0.2 cannot be represented exactly in the binary
+number system computers use internally. JavaScript therefore stores very close 
+approximations of those numbers.
 
 What was the single hardest Module 3 concept for you to grasp, and what finally made it
 click? Be honest — this is for me to know how to teach the next cohort better.
+The hardest concept for me to grasp was the difference between || and ?? especially
+understanding how they treat values like 0, false, '', null and undefined. What
+finally made it click was testing each operator with real examples instead of just 
+memorising the definitions.
 */
 
