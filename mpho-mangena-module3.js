@@ -1,5 +1,22 @@
 /*CHALLENGE 1 */
 
+let salary = 45000;
+let medicalAid = 2500;
+const taxDeduct = salary * (25 / 100);
+const uifDeduct = salary * (1 / 100);
+const rightSalary = grossSalary - taxDeduction - uifDeduction - medicalAid;
+
+let cartTotal = 0;
+cartTotal += 150;
+cartTotal += 85;
+cartTotal += 220;
+cartTotal *= 0.90;
+cartTotal *= 1.15;
+console.log("Total: R " + cartTotal);
+
+
+
+
 /*1 What is the difference between prefix (++x) and postfix (x++) increment? Show it with a
 one-line code example where they produce different outputs.
 The postfix  performs the operation by changing the value of the variable but returns the value before the change.
