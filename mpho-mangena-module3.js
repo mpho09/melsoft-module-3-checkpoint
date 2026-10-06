@@ -21,7 +21,7 @@ console.log("Total: R " + cartTotal);
 
   
 //3. Comparison
-// the  is checking for certain rules of what is needed
+// the  is checking for certain rules of what is needed. i used if statements for comparison
   if (age < 18) {
     return "Error: You must be at least 18 years";
   }
@@ -41,7 +41,7 @@ const canAccess =
 
 //5. Unary
 //this code below Converts the string '25' from a form field into a number using the unary + operator.
-const age2 = '25';
+const age2 = "25";
 const age = +age2;
 let isDarkMode = false;
 isDarkMode = !isDarkMode;
@@ -340,7 +340,7 @@ const DELETE = 4; // binary 0100
 const ADMIN = 8; // binary 1000
 
 //1
-const permission = READ | WRITE;
+const user = READ | WRITE;
 
 //2
 const UserAdmin = READ + WRITE + DELETE + ADMIN;
