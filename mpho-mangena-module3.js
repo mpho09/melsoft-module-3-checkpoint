@@ -258,3 +258,56 @@ typeof NaN
 typeof undeclaredVariable
 
 /* CHALLENGE 6*/
+
+
+const READ = 1; // binary 0001
+const WRITE = 2; // binary 0010
+const DELETE = 4; // binary 0100
+const ADMIN = 8; // binary 1000
+
+const permission = READ | WRITE;
+const UserAdmin = READ + WRITE + DELETE + ADMIN;
+permission && READ ? "YES" : "NO";
+
+/*Interview Questions
+Why would a team use bitwise flags for permissions instead of storing an array like ['read',
+'write']? Give two concrete reasons.
+
+What is the real-world downside of bitwise permissions? When would you NOT use this
+pattern?
+
+Explain the difference between & and &&, and | and ||. Give one case where confusing them
+would cause a silent bug.
+*/
+
+/*CHALLENGE 7*/
+
+/*CHALLENGE 9 */
+
+/*CHALLENGE 10*/
+/*
+Walk me through the difference between the single-character operators (& and |) and the
+double-character operators (&& and ||). Give one case where confusing them would cause a
+silent production bug.
+They are both logical operators but the single-character operators (& and |) are bitwise
+operators that perform operations on the binary representation of numbers and then the
+double-character operators (&& and ||) are logical operators that check boolean expressions.
+
+When would you prefer the nullish coalescing operator (??) over the logical OR operator (||)?
+Give a concrete example where swapping one for the other changes the outcome.
+I would prefer the nullish coalescing operator (??) when I want to check if the value is 
+null or undefined without treating other falsy values to be like null or undefined.
+
+typeof null returns 'object'. Explain WHY (the historical reason) and then describe how you
+would check if a variable is specifically null without being tricked.
+
+
+In your banking calculator for Challenge 7, you had to handle floating-point arithmetic for
+money. Explain in your own words why 0.1 + 0.2 does NOT equal 0.3 in JavaScript, and
+what the production-grade solution would be (think about how real banks store money
+internally).
+
+What was the single hardest Module 3 concept for you to grasp, and what finally made it
+click? Be honest — this is for me to know how to teach the next cohort better.
+*/
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>challenge 8</title>
+</head>
+<body>
+    <script>
+        window.alert("Welcome to our application!");
+
+        const userInput = window.prompt("Please enter your name:");
+        const userName = userInput || "Guest";
+        window.alert(`Hello, ${userName}`);
+
+       const userAge = window.prompt("What is your age?");
+       const age = Number(userAge);
+
+       const tier = age < 18 ? 'Youth': age <= 59 ? 'Adult': 'Senior';
+
+       const message = window.confirm("Do you want to subscribe to our newsletter?");
+       console.log("User wants to subscribe" + " "+ message);
+
+
+const userName1 = "Mpho";
+const ages = 24;
+const tiers = "Adult";
+const wantsToSubscribe = true;
+const summaryMessage = `Profile Summary:
+Name: ${userName1}
+Age: ${ages}
+Tier: ${tiers}
+Subscribed to Newsletter: ${wantsToSubscribe ? 'Yes' : 'No'}`;
+
+window.alert(summaryMessage); 
+    </script>
+
+/*What does 'blocking' mean when we say alert/confirm/prompt are blocking? Why is that a
+problem for modern web apps?
+It means that it blocks the whole browser so you cannot interact with the page until
+you click ok. This is a problem for modern web apps because it is not a good user 
+experience and you are unable to style it.
+
+In a real modern web app, what would developers use instead of alert/confirm/prompt? (You
+can name any one modern alternative.)
+they use dialog. it is a pop up form
+
+window.confirm() returns a boolean. What does window.prompt() return when the user
+clicks Cancel? What does it return if the user leaves the field blank and clicks OK?
+It would return null if the user clicks cancel and it would return an empty string 
+if the user leaves the field blank and clicks ok.
+*/
+</body>
+</html>
