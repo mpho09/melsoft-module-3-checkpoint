@@ -1,11 +1,16 @@
 /*CHALLENGE 1 */
 
+//1. Arithmetic
+// the code below is calculating for the net salary after all the deduction
 let salary = 45000;
 let medicalAid = 2500;
 const taxDeduct = salary * (25 / 100);
 const uifDeduct = salary * (1 / 100);
 const rightSalary = grossSalary - taxDeduction - uifDeduction - medicalAid;
 
+
+//2. Assignment
+// the code is calculating the total amount of the cart
 let cartTotal = 0;
 cartTotal += 150;
 cartTotal += 85;
@@ -14,7 +19,46 @@ cartTotal *= 0.90;
 cartTotal *= 1.15;
 console.log("Total: R " + cartTotal);
 
+  
+//3. Comparison
+// the  is checking for certain rules of what is needed
+  if (age < 18) {
+    return "Error: You must be at least 18 years";
+  }
+  if (password.length < 8) {
+    return "Error: Password must be at least 8 characters.";
+  }
+  if (email != confirmEmail) {
+    return "Error: Emails do not match.";
+  }
 
+  return "Signup successful!";
+
+//4.Logical
+// this code checks whether the current user is allowed to access the premium dashboard
+const canAccess =
+  (isLoggedIn && emailVerified) || isAdmin;
+
+//5. Unary
+//this code below Converts the string '25' from a form field into a number using the unary + operator.
+const age2 = '25';
+const age = +age2;
+let isDarkMode = false;
+isDarkMode = !isDarkMode;
+
+//6 Ternary / Conditional
+const membershipType = 'trial';
+
+
+ //7. String concatenation
+//the code below is using string concatenation. i have initialized the variable and trying to compare the template literal and string concatenation
+const firstName1 = "Mpho";
+const lastName1 = "Mangena";
+const age1 = 23;
+const greetingConcatenate = "Welcome back " + firstName + " " + lastName + ", you are " + age + " years old.";
+const greetingTemplate = `Welcome back ${firstName1} ${lastName1}, you are ${age1} years old.`;
+console.log(greeting);
+// The template literal is more readable and easier to maintain.
 
 
 /*1 What is the difference between prefix (++x) and postfix (x++) increment? Show it with a
@@ -23,12 +67,15 @@ The postfix  performs the operation by changing the value of the variable but re
 The prefix version performs the operation and returns the new value.
 
 
-2 The modulo operator (%) is one of the most-asked-about operators in interviews. Give
+The modulo operator (%) is one of the most-asked-about operators in interviews. Give
 THREE concrete, real-world uses for it. (One is even/odd, think of two more.)
+Time and Currency
 
 
-3 In your Challenge 1 Section 6 example, you nested a ternary. Is nested ternary good
+In your Challenge 1 Section 6 example, you nested a ternary. Is nested ternary good
 practice? When should you NOT use it?
+it is bad practice becouse it can be hard to read. They might be easy to write but 
+for the next person it can be difficult to read
 /
 
 /*CHALLENGE2*/
@@ -196,18 +243,28 @@ console.log(grade(42));
 console.log(grade(0));
 
 /*PARTB*/
+  const displayName = user.displayName || 'Guest User';
+  const theme = user.theme || 'light';
+  const maxResults = user.maxResults || 10;
+
+  const lastLogin = user.lastLogin ?? 'Never';
+  const notificationCount = user.notificationCount ?? 0;
 
 
 /*PART C*/
-
+//1
 console.log(user && user.address && user.address.city);
+
+//2
 console.log(user?.address?.city);
+
+//3
+console.log(user3 && user3.address && user3.address.city);
 
 
 /*PART D*/
 
-
-//I t will print finally becouse all first 3 values are treated as false so it will print the last value
+//It will print finally becouse all first 3 values are treated as false so it will print the last value
 null || undefined || 0 || "" || "finally"
 
 //It will print finally as well becouse the first 3 are false
@@ -282,24 +339,120 @@ const WRITE = 2; // binary 0010
 const DELETE = 4; // binary 0100
 const ADMIN = 8; // binary 1000
 
+//1
 const permission = READ | WRITE;
+
+//2
 const UserAdmin = READ + WRITE + DELETE + ADMIN;
-permission && READ ? "YES" : "NO";
+
+//3
+console.log((userPermissions & READ) !== 0 ? 'Yes' : 'No');
+
+//4
+console.log((userPermissions & DELETE) !== 0 ? 'Yes' : 'No');
+
+//5
+
+userPermissions |= DELETE;
+console.log(userPermissions);
+
+//6
+userPermissions &= ~WRITE;
+console.log(userPermissions);
+
+//7
+userPermissions ^= ADMIN;
+console.log(userPermissions);
+
 
 /*Interview Questions
 Why would a team use bitwise flags for permissions instead of storing an array like ['read',
 'write']? Give two concrete reasons.
+They are very compact and efficient
 
 What is the real-world downside of bitwise permissions? When would you NOT use this
 pattern?
+Its harder to read and maintain. A developer may see a value like 7 and not immediately 
+know that it represents READ, WRITE and DELETE permissions.
 
 Explain the difference between & and &&, and | and ||. Give one case where confusing them
 would cause a silent bug.
+They are useful for permission flags because | can combine permissions and & can check 
+whether a permission exists. On the other hand && and || are logical operators used with
+conditions and truthy or falsy values.
 */
 
 /*CHALLENGE 7*/
+/*scenario 1*/
+const principal = 25000;
+const annualRate = 0.075;
+const compoundsPerYear = 12;
+const years = 3;
+
+const finalBalance = deposit * Math.pow(
+  1 + interestRate / months,
+  months * years
+);
+const interestEarned = finalBalance - deposit;
+console.log("balance:" + balance);
+console.log("interest earned: " + interest);
+
+/*scenario 3*/
+const zarAmount = 15750.33;
+const exchangeRate = 18.42;
+const commissionRate = 0.025;
+const commission = zarAmount * commissionRate;
+const amountAfterCommission = zarAmount - commission;
+const usdReceived = amountAfterCommission / exchangeRate;
+
+console.log("Commission: " + commission);
+console.log("Amount after commission: " + amountAfterCommission);
+console.log("USD received: " + usdReceived);
 
 /*CHALLENGE 9 */
+
+
+var item1Price = "199.99"; // 1.should be changed to number not string becosue its an amount
+var item2Price = "49.50";// 2.should be changed to number not string becosue its an amount
+var item3Price = 125;
+var quantity = "2"; // 3.it should be number not string
+var discountCode = "SAVE10";
+var isLoggedIn = "true"; // 4.should be a boolean not string
+var customerAge = null; // 5.the null should be changed to an actual age
+var subtotal = item1Price + item2Price + item3Price * quantity; //6.should have brackets (item3Price * quantity)
+console.log("Subtotal:", subtotal);
+var discount = discountCode == "SAVE10" ? 0.1 : 0; //7. it is much more saver to use strict equality
+var discountAmount = subtotal * discount;
+var afterDiscount = subtotal - discountAmount;
+var vat = afterDiscount * 0.15;
+var total = afterDiscount + vat;
+var canCheckout = isLoggedIn && customerAge > 18; //8. should be >= not > only becouse someone who is 18 would not qualify
+console.log("Can checkout?", canCheckout);
+var seniorDiscount = customerAge >= 60 ? total * 0.05 : null;
+var finalTotal = total - seniorDiscount;
+console.log("Total: R" + finalTotal.toFixed(2));
+
+/*correct code*/
+var item1Price = 199.99;
+var item2Price = 49.50;
+var item3Price = 125;
+var quantity = 2; 
+var discountCode = "SAVE10";
+var isLoggedIn = true; 
+var customerAge = 23; 
+var subtotal = item1Price + item2Price + (item3Price * quantity); 
+console.log("Subtotal:", subtotal);
+var discount = discountCode ==="SAVE10" ? 0.1 : 0; 
+var discountAmount = subtotal * discount;
+var afterDiscount = subtotal - discountAmount;
+var vat = afterDiscount * 0.15;
+var total = afterDiscount + vat;
+var canCheckout = isLoggedIn && customerAge >= 18; 
+console.log("Can checkout?", canCheckout);
+var seniorDiscount = customerAge >= 60 ? total * 0.05 : null;
+var finalTotal = total - seniorDiscount;
+console.log("Total: R" + finalTotal.toFixed(2));
+
 
 /*CHALLENGE 10*/
 /*
